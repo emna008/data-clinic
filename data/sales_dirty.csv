@@ -1,0 +1,313 @@
+order_id,order_date,customer_email,country,product,quantity,unit_price,total
+ORD-0065,2026-02-21,client65@example.com,Italy,Laptop,4,899.0,3596.0
+ORD-0233,14/09/2026,client233@example.com,Italy,Keyboard,3,45.0,135.0
+ORD-0298,2026-06-16,client298@example.com,France,Laptop,4,899.0,3596.0
+ORD-0242,05/06/2026,,France,Headphones,1,59.9,59.9
+ORD-0288,2026-08-09,client288@example.com,Germany,Keyboard,1,45.0,45.0
+ORD-0264,16/06/2026,client264@example.com,Italy,Headphones,3,59.9,179.7
+ORD-0115,2026-02-11,client115@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0291,2026-06-04,client291@example.com,Tunisia,Laptop,1,899.0,899.0
+ORD-0165,2026-03-19,client165@example.com,France,Laptop,5,899.0,4495.0
+ORD-0149,"Sep 08, 2026",client149@example.com,Spain,Laptop,2,899.0,1798.0
+ORD-0276,25/02/2026,client276@example.com,tunisia,Headphones,4,59.9,239.6
+ORD-0108,23/09/2026,client108@example.com,Tunisia,Monitor,2,249.0,498.0
+ORD-0178,2026-08-13,client178@example.com,Germany,Keyboard,5,-45.0,225.0
+ORD-0038,"Aug 13, 2026",client38@example.com,Germany,Mouse,4,19.5,78.0
+ORD-0160,2026-01-24,client160@example.com,Germany,Keyboard,2,45.0,90.0
+ORD-0236,2026-07-07,client236@example.com,Italy,Headphones,4,59.9,239.6
+ORD-0147,"May 24, 2026",client147@example.com,Germany,Mouse,3,19.5,58.5
+ORD-0133,22/04/2026,client133@example.com,Italy,Monitor,1,249.0,249.0
+ORD-0121,23/04/2026,client121@example.com,Italy,Monitor,4,249.0,996.0
+ORD-0045,2026-02-18,client45@example.com,Tunisia,Monitor,4,249.0,996.0
+ORD-0130,"Apr 25, 2026",client130@example.com,Germany,Keyboard,1,45.0,45.0
+ORD-0136,2026-04-12,client136@example.com,Spain,  Keyboard ,4,45.0,180.0
+ORD-0212,14/07/2026,client212@example.com,Italy,Laptop,3,-899.0,2697.0
+ORD-0205,2026-07-16,client205@example.com,Italy,Headphones,2,59.9,119.8
+ORD-0031,"Mar 24, 2026",not-an-email,Germany,Headphones,2,59.9,119.8
+ORD-0152,08/07/2026,client152@example.com,Italy,Headphones,3,59.9,179.7
+ORD-0089,2026-01-20,client89@example.com,Germany,Headphones,5,59.9,299.5
+ORD-0079,2026-07-03,client79@example.com,france,Mouse,3,19.5,58.5
+ORD-0172,29/07/2026,client172@example.com,France,Laptop,2,899.0,1798.0
+ORD-0275,2026-09-17,client275@example.com,France,Mouse,3,19.5,58.5
+ORD-0026,"May 09, 2026",client26@example.com,Italy,Keyboard,4,-45.0,180.0
+ORD-0054,21/08/2026,client54@example.com,Germany,Laptop,4,899.0,3596.0
+ORD-0093,06/07/2026,client93@example.com,Tunisia,Keyboard,5,45.0,225.0
+ORD-0225,"Jul 15, 2026",client225@example.com,Tunisia,Monitor,999,249.0,249.0
+ORD-0202,2026-09-08,client202@example.com,Italy,Mouse,3,-19.5,58.5
+ORD-0082,"Jul 30, 2026",client82@example.com,Germany,Laptop,2,899.0,1798.0
+ORD-0057,"Sep 02, 2026",client57@example.com,France,Mouse,1,19.5,19.5
+ORD-0073,"Feb 17, 2026",client73@example.com,France,Monitor,3,249.0,747.0
+ORD-0292,2026-06-17,client292@example.com,Germany,Headphones,3,59.9,179.7
+ORD-0259,"Aug 20, 2026",client259@example.com,France,Keyboard,5,45.0,225.0
+ORD-0096,"Jun 01, 2026",client96@example.com,Spain,Monitor,3,249.0,747.0
+ORD-0097,"Jul 14, 2026",client97@example.com,Spain,Headphones,2,59.9,119.8
+ORD-0155,"Mar 03, 2026",client155@example.com,Tunisia,Mouse,3,19.5,58.5
+ORD-0056,"Feb 01, 2026",client56@example.com,France,Mouse,2,19.5,39.0
+ORD-0262,2026-08-16,client262@example.com,Spain,Monitor,1,249.0,249.0
+ORD-0111,2026-08-17,client111@example.com,Spain,Keyboard,5,45.0,225.0
+ORD-0140,2026-09-08,client140@example.com,Spain,Mouse,1,19.5,19.5
+ORD-0090,10/06/2026,client90@example.com,Germany,Keyboard,4,45.0,180.0
+ORD-0150,2026-08-18,client150@example.com,Spain,Headphones,4,59.9,239.6
+ORD-0094,"Jun 10, 2026",client94@example.com,Italy,  Laptop ,3,899.0,2697.0
+ORD-0173,2026-01-17,client173@example.com,Germany,Keyboard,4,45.0,180.0
+ORD-0004,"Jan 14, 2026",client4@example.com,Italy,Headphones,5,59.9,299.5
+ORD-0296,"Jun 10, 2026",client296@example.com,France,Laptop,4,899.0,3596.0
+ORD-0014,09/07/2026,,Tunisia,Monitor,3,249.0,747.0
+ORD-0240,"Apr 24, 2026",client240@example.com,Germany,Keyboard,999,45.0,225.0
+ORD-0166,2026-05-08,client166@example.com,France,Keyboard,3,45.0,135.0
+ORD-0279,"May 20, 2026",client279@example.com,Tunisia,Mouse,1,19.5,19.5
+ORD-0070,2026-03-01,client70@example.com,Germany,Laptop,2,899.0,1798.0
+ORD-0255,08/01/2026,not-an-email,Tunisia,Laptop,1,899.0,899.0
+ORD-0023,2026-09-10,client23@example.com,Italy,Headphones,2,59.9,119.8
+ORD-0001,2026-05-06,client1@example.com,Germany,Laptop,1,899.0,899.0
+ORD-0142,05/09/2026,client142@example.com,Germany,  Headphones ,5,59.9,299.5
+ORD-0198,2026-08-30,client198@example.com,Spain,Mouse,4,19.5,78.0
+ORD-0018,2026-05-18,client18@example.com,Spain,Laptop,3,899.0,2697.0
+ORD-0080,"Jul 28, 2026",client80@example.com,Germany,Headphones,1,59.9,59.9
+ORD-0034,2026-02-10,,Italy,Laptop,2,899.0,1798.0
+ORD-0251,2026-04-16,client251@example.com,Italy,Headphones,999,59.9,119.8
+ORD-0263,2026-03-17,client263@example.com,Italy,  Laptop ,3,899.0,2697.0
+ORD-0182,"Jan 11, 2026",client182@example.com,Italy,Laptop,2,899.0,1798.0
+ORD-0187,"May 28, 2026",client187@example.com,Spain,Mouse,4,19.5,78.0
+ORD-0283,22/03/2026,client283@example.com,Germany,Monitor,4,249.0,996.0
+ORD-0146,2026-09-07,client146@example.com,Tunisia,Monitor,3,249.0,747.0
+ORD-0295,22/01/2026,client295@example.com,Spain,Mouse,1,19.5,19.5
+ORD-0154,21/08/2026,client154@example.com,Germany,Keyboard,3,45.0,135.0
+ORD-0095,"Jun 08, 2026",client95@example.com,Italy,Laptop,3,899.0,2697.0
+ORD-0053,26/03/2026,client53@example.com,France,Headphones,4,59.9,239.6
+ORD-0197,"May 30, 2026",client197@example.com,Spain,Laptop,2,899.0,1798.0
+ORD-0183,31/03/2026,client183@example.com,France,Mouse,5,19.5,97.5
+ORD-0035,2026-03-06,client35@example.com,Italy,Monitor,1,249.0,249.0
+ORD-0211,"Jul 23, 2026",client211@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0046,30/07/2026,client46@example.com,Spain,Monitor,3,249.0,747.0
+ORD-0179,"May 20, 2026",client179@example.com,Spain,Monitor,3,249.0,747.0
+ORD-0074,02/01/2026,client74@example.com,france,Monitor,3,249.0,747.0
+ORD-0203,26/06/2026,,Spain,Monitor,5,249.0,1245.0
+ORD-0060,"May 07, 2026",client60@example.com,France,Headphones,4,59.9,239.6
+ORD-0226,2026-06-01,client226@example.com,Germany,Mouse,5,19.5,97.5
+ORD-0235,2026-02-08,client235@example.com,Spain,Mouse,999,19.5,19.5
+ORD-0114,01/05/2026,not-an-email,Germany,Monitor,1,249.0,249.0
+ORD-0289,"Sep 27, 2026",client289@example.com,Spain,Mouse,5,19.5,97.5
+ORD-0132,2026-05-03,client132@example.com,Tunisia,Laptop,5,899.0,4495.0
+ORD-0167,"Apr 26, 2026",,Italy,Keyboard,4,45.0,180.0
+ORD-0051,2026-01-08,client51@example.com,France,Keyboard,1,45.0,45.0
+ORD-0248,01/02/2026,client248@example.com,Germany,Mouse,5,19.5,97.5
+ORD-0072,"May 16, 2026",client72@example.com,Tunisia,Headphones,3,59.9,179.7
+ORD-0178,2026-08-13,client178@example.com,Germany,Keyboard,5,-45.0,225.0
+ORD-0247,2026-07-05,client247@example.com,Tunisia,Monitor,4,249.0,996.0
+ORD-0112,"May 07, 2026",client112@example.com,Germany,Monitor,4,249.0,996.0
+ORD-0013,14/07/2026,client13@example.com,Frnace,Laptop,2,899.0,1798.0
+ORD-0101,19/09/2026,client101@example.com,Tunisia,Monitor,4,249.0,996.0
+ORD-0180,"Feb 11, 2026",client180@example.com,Spain,Keyboard,4,45.0,180.0
+ORD-0238,"Jul 15, 2026",client238@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0063,16/05/2026,client63@example.com,Tunisia,Headphones,3,59.9,179.7
+ORD-0027,"May 17, 2026",client27@example.com,Italy,Laptop,1,899.0,899.0
+ORD-0222,07/02/2026,client222@example.com,Tunisia,Mouse,5,19.5,97.5
+ORD-0005,23/04/2026,client5@example.com,Spain,Headphones,5,59.9,299.5
+ORD-0110,12/06/2026,client110@example.com,Italy,Headphones,4,-59.9,239.6
+ORD-0246,2026-07-09,client246@example.com,France,Monitor,3,249.0,747.0
+ORD-0215,2026-06-03,client215@example.com,Tunisia,Laptop,4,899.0,3596.0
+ORD-0138,22/01/2026,client138@example.com,Italy,Keyboard,1,45.0,45.0
+ORD-0078,2026-03-07,client78@example.com,Spain,Keyboard,2,45.0,90.0
+ORD-0281,2026-02-05,client281@example.com,Spain,Headphones,5,59.9,299.5
+ORD-0091,"Jul 17, 2026",client91@example.com,France,Keyboard,5,45.0,225.0
+ORD-0261,03/09/2026,client261@example.com,France,Monitor,1,249.0,249.0
+ORD-0115,2026-02-11,client115@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0209,2026-08-22,client209@example.com,Italy,Monitor,1,249.0,249.0
+ORD-0256,2026-01-09,client256@example.com,Germany,Headphones,5,59.9,299.5
+ORD-0024,"Mar 23, 2026",client24@example.com,Tunisia,Laptop,1,899.0,899.0
+ORD-0244,"Aug 03, 2026",client244@example.com,Italy,Monitor,3,249.0,747.0
+ORD-0219,04/05/2026,client219@example.com,Spain,Laptop,5,899.0,4495.0
+ORD-0159,"Jan 08, 2026",client159@example.com,Germany,Mouse,2,19.5,39.0
+ORD-0181,2026-05-09,client181@example.com,Germany,Laptop,4,899.0,3596.0
+ORD-0088,01/03/2026,client88@example.com,France,Keyboard,3,45.0,135.0
+ORD-0127,19/04/2026,client127@example.com,Germany,Mouse,4,19.5,78.0
+ORD-0081,01/04/2026,client81@example.com,Tunisia,Headphones,2,59.9,119.8
+ORD-0043,"Apr 20, 2026",client43@example.com,Spain,Headphones,3,59.9,179.7
+ORD-0208,2026-06-19,client208@example.com,Italy,Headphones,5,59.9,299.5
+ORD-0085,2026-04-25,client85@example.com,Tunisia,Mouse,3,-19.5,58.5
+ORD-0232,2026-04-13,client232@example.com,Tunisia,Mouse,4,19.5,78.0
+ORD-0213,2026-02-05,client213@example.com,France,Monitor,5,249.0,1245.0
+ORD-0280,2026-01-04,client280@example.com,Germany,Mouse,3,19.5,58.5
+ORD-0294,"Sep 14, 2026",,Tunisia,Monitor,5,249.0,1245.0
+ORD-0196,28/02/2026,client196@example.com,Tunisia,Monitor,1,249.0,249.0
+ORD-0274,"May 28, 2026",client274@example.com,France,Mouse,4,19.5,78.0
+ORD-0217,"May 06, 2026",client217@example.com,Tunisia,Mouse,4,19.5,78.0
+ORD-0083,25/02/2026,client83@example.com,Tunisia,Headphones,3,59.9,179.7
+ORD-0117,28/07/2026,client117@example.com,Spain,Headphones,1,59.9,59.9
+ORD-0194,"May 03, 2026",client194@example.com,France,Monitor,1,249.0,249.0
+ORD-0002,"Feb 14, 2026",client2@example.com,Italy,Headphones,1,59.9,59.9
+ORD-0104,2026-03-17,client104@example.com,Tunisia,  Mouse ,2,19.5,39.0
+ORD-0006,"Mar 23, 2026",client6@example.com,France,Keyboard,3,45.0,135.0
+ORD-0300,"Jul 25, 2026",client300@example.com,Spain,Laptop,2,899.0,1798.0
+ORD-0129,"Jan 10, 2026",client129@example.com,Spain,Mouse,1,19.5,19.5
+ORD-0290,"Jul 22, 2026",client290@example.com,Tunisia,  Mouse ,1,19.5,19.5
+ORD-0286,06/08/2026,client286@example.com,Spain,Laptop,3,899.0,2697.0
+ORD-0058,2026-09-18,client58@example.com,France,Keyboard,2,45.0,90.0
+ORD-0066,2026-05-16,client66@example.com,Italy,Keyboard,2,45.0,90.0
+ORD-0210,08/02/2026,client210@example.com,Tunisia,  Headphones ,4,59.9,239.6
+ORD-0077,"Jul 09, 2026",client77@example.com,France,Headphones,5,59.9,299.5
+ORD-0040,"Apr 28, 2026",client40@example.com,Italy,Mouse,1,19.5,19.5
+ORD-0169,"Jan 31, 2026",client169@example.com,Italy,Monitor,3,249.0,747.0
+ORD-0243,11/03/2026,client243@example.com,tunisia,Laptop,1,899.0,899.0
+ORD-0282,21/04/2026,client282@example.com,Italy,Laptop,1,899.0,899.0
+ORD-0267,2026-08-20,client267@example.com,Spain,Keyboard,2,45.0,90.0
+ORD-0177,26/03/2026,client177@example.com,FRANCE,Headphones,1,59.9,59.9
+ORD-0028,2026-08-11,client28@example.com,germany,  Mouse ,1,19.5,19.5
+ORD-0188,2026-08-21,client188@example.com,France,Monitor,5,249.0,1245.0
+ORD-0252,2026-04-21,client252@example.com,Italy,Keyboard,2,45.0,90.0
+ORD-0223,"Aug 06, 2026",client223@example.com,Germany,Mouse,5,19.5,97.5
+ORD-0253,02/01/2026,client253@example.com,Italy,Mouse,2,19.5,39.0
+ORD-0255,08/01/2026,not-an-email,Tunisia,Laptop,1,899.0,899.0
+ORD-0190,25/08/2026,client190@example.com,Italy,  Keyboard ,1,45.0,45.0
+ORD-0273,04/03/2026,client273@example.com,Germany,  Keyboard ,5,45.0,225.0
+ORD-0176,18/03/2026,client176@example.com,Tunisia,Laptop,5,899.0,4495.0
+ORD-0107,2026-01-03,client107@example.com,Tunisie,Monitor,2,249.0,498.0
+ORD-0068,"Jun 04, 2026",client68@example.com,Italy,Headphones,4,59.9,239.6
+ORD-0186,2026-02-23,client186@example.com,Deutschland,Monitor,3,249.0,747.0
+ORD-0204,22/08/2026,,Spain,Keyboard,5,45.0,225.0
+ORD-0278,"Jan 14, 2026",client278@example.com,Italy,Headphones,4,59.9,239.6
+ORD-0118,2026-02-01,client118@example.com,Spain,Keyboard,4,45.0,180.0
+ORD-0122,2026-09-06,client122@example.com,Spain,Headphones,3,59.9,179.7
+ORD-0041,2026-01-31,client41@example.com,France,Headphones,1,59.9,59.9
+ORD-0069,"Jun 03, 2026",client69@example.com,Italy,Keyboard,1,45.0,45.0
+ORD-0237,05/03/2026,client237@example.com,Germany,Monitor,1,249.0,249.0
+ORD-0297,02/08/2026,client297@example.com,Spain,Monitor,5,249.0,1245.0
+ORD-0071,"May 25, 2026",client71@example.com,Germany,Keyboard,2,45.0,90.0
+ORD-0102,"Sep 21, 2026",client102@example.com,Germany,Headphones,1,59.9,59.9
+ORD-0293,2026-03-31,client293@example.com,Spain,Laptop,4,899.0,3596.0
+ORD-0229,"Mar 12, 2026",client229@example.com,Germany,Headphones,5,59.9,299.5
+ORD-0036,"May 16, 2026",client36@example.com,Tunisia,Monitor,5,249.0,1245.0
+ORD-0268,24/07/2026,client268@example.com,Spain,Monitor,3,249.0,747.0
+ORD-0234,"Jun 01, 2026",,Spain,Headphones,999,59.9,179.7
+ORD-0011,"Jul 05, 2026",client11@example.com,Italy,Keyboard,3,45.0,135.0
+ORD-0151,"Jul 27, 2026",client151@example.com,Tunisia,Laptop,3,899.0,2697.0
+ORD-0055,2026-03-21,client55@example.com,Spain,Monitor,5,249.0,1245.0
+ORD-0241,2026-07-29,client241@example.com,Germany,Laptop,4,899.0,3596.0
+ORD-0257,"Aug 04, 2026",not-an-email,Tunisia,Mouse,1,19.5,19.5
+ORD-0128,23/05/2026,not-an-email,Spain,Mouse,3,19.5,58.5
+ORD-0141,20/03/2026,client141@example.com,Spain,Monitor,3,249.0,747.0
+ORD-0281,2026-02-05,client281@example.com,Spain,Headphones,5,59.9,299.5
+ORD-0206,"Aug 31, 2026",client206@example.com,Germany,Monitor,1,249.0,249.0
+ORD-0131,2026-05-07,client131@example.com,France,Laptop,1,899.0,899.0
+ORD-0139,"Feb 05, 2026",client139@example.com,Germany,Keyboard,4,45.0,180.0
+ORD-0061,11/02/2026,client61@example.com,Italy,Keyboard,1,45.0,45.0
+ORD-0015,"Mar 29, 2026",client15@example.com,France,Headphones,3,59.9,179.7
+ORD-0214,2026-08-11,client214@example.com,Frnace,  Mouse ,2,19.5,39.0
+ORD-0254,2026-05-09,client254@example.com,Italy,Headphones,2,59.9,119.8
+ORD-0033,2026-06-07,client33@example.com,Germany,Laptop,1,899.0,899.0
+ORD-0098,04/06/2026,client98@example.com,Italy,Headphones,5,59.9,299.5
+ORD-0025,17/07/2026,,France,Monitor,999,249.0,1245.0
+ORD-0239,2026-08-30,client239@example.com,Tunisia,Mouse,1,19.5,19.5
+ORD-0220,"Aug 25, 2026",client220@example.com,Tunisia,Keyboard,2,45.0,90.0
+ORD-0185,29/08/2026,not-an-email,France,  Monitor ,4,249.0,996.0
+ORD-0189,01/03/2026,client189@example.com,Germany,Mouse,3,19.5,58.5
+ORD-0038,"Aug 13, 2026",client38@example.com,Germany,Mouse,4,19.5,78.0
+ORD-0193,"Aug 13, 2026",,Germany,Keyboard,2,45.0,90.0
+ORD-0030,"Sep 17, 2026",not-an-email,germany,Keyboard,1,45.0,45.0
+ORD-0158,2026-06-01,client158@example.com,Tunisia,Mouse,1,19.5,19.5
+ORD-0164,25/07/2026,client164@example.com,France,Monitor,1,249.0,249.0
+ORD-0050,08/02/2026,client50@example.com,Tunisia,Mouse,999,19.5,78.0
+ORD-0250,26/01/2026,client250@example.com,France,Headphones,5,59.9,299.5
+ORD-0205,2026-07-16,client205@example.com,Italy,Headphones,2,59.9,119.8
+ORD-0151,"Jul 27, 2026",client151@example.com,Tunisia,Laptop,3,899.0,2697.0
+ORD-0287,2026-05-20,client287@example.com,Spain,Keyboard,999,-45.0,180.0
+ORD-0042,"Feb 06, 2026",client42@example.com,Germany,Laptop,1,899.0,899.0
+ORD-0163,27/01/2026,client163@example.com,Tunisia,Monitor,3,249.0,747.0
+ORD-0009,2026-05-16,client9@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0084,13/04/2026,client84@example.com,Tunisia,Laptop,4,899.0,3596.0
+ORD-0269,"Jun 10, 2026",client269@example.com,Spain,Laptop,3,899.0,2697.0
+ORD-0191,"Jul 05, 2026",client191@example.com,Italy,Laptop,2,899.0,1798.0
+ORD-0199,2026-07-16,client199@example.com,Tunisia,Monitor,5,249.0,1245.0
+ORD-0195,"Jan 08, 2026",client195@example.com,Italy,Headphones,3,59.9,179.7
+ORD-0162,29/08/2026,client162@example.com,Germany,Laptop,5,899.0,4495.0
+ORD-0075,"Aug 15, 2026",client75@example.com,Tunisia,Headphones,3,59.9,179.7
+ORD-0145,2026-06-22,client145@example.com,Spain,Keyboard,5,45.0,225.0
+ORD-0170,"May 16, 2026",client170@example.com,Tunisia,Laptop,2,899.0,1798.0
+ORD-0067,09/07/2026,client67@example.com,Tunisia,Mouse,999,19.5,19.5
+ORD-0100,14/06/2026,client100@example.com,Italy,Monitor,5,249.0,1245.0
+ORD-0284,2026-02-13,client284@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0016,14/07/2026,client16@example.com,Spain,Headphones,2,59.9,119.8
+ORD-0044,2026-08-31,,Italy,Headphones,5,59.9,299.5
+ORD-0125,"Feb 12, 2026",,France,Keyboard,5,45.0,225.0
+ORD-0120,30/06/2026,client120@example.com,France,Monitor,4,249.0,996.0
+ORD-0126,2026-04-04,client126@example.com,Spain,Monitor,2,249.0,498.0
+ORD-0265,"Aug 21, 2026",client265@example.com,Germany,Keyboard,5,45.0,225.0
+ORD-0105,07/02/2026,client105@example.com,Spain,Laptop,2,899.0,1798.0
+ORD-0059,"Feb 04, 2026",client59@example.com,Italy,Headphones,1,59.9,59.9
+ORD-0258,18/08/2026,client258@example.com,Spain,Laptop,1,899.0,899.0
+ORD-0058,2026-09-18,client58@example.com,France,Keyboard,2,45.0,90.0
+ORD-0168,"Jun 02, 2026",client168@example.com,Spain,Monitor,4,249.0,996.0
+ORD-0143,2026-06-15,client143@example.com,Germany,Monitor,5,249.0,1245.0
+ORD-0277,"May 23, 2026",client277@example.com,France,Keyboard,3,45.0,135.0
+ORD-0260,24/09/2026,not-an-email,France,Headphones,5,59.9,299.5
+ORD-0285,"Jan 26, 2026",not-an-email,Italy,Headphones,2,59.9,119.8
+ORD-0221,05/01/2026,client221@example.com,germany,Mouse,4,19.5,78.0
+ORD-0175,12/04/2026,client175@example.com,Italy,Headphones,3,59.9,179.7
+ORD-0012,27/04/2026,client12@example.com,france,Headphones,1,59.9,59.9
+ORD-0076,2026-02-27,client76@example.com,France,Monitor,5,249.0,1245.0
+ORD-0228,2026-06-30,client228@example.com,Tunisia,Monitor,3,249.0,747.0
+ORD-0148,2026-09-22,,FRANCE,Mouse,5,19.5,97.5
+ORD-0067,09/07/2026,client67@example.com,Tunisia,Mouse,999,19.5,19.5
+ORD-0238,"Jul 15, 2026",client238@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0157,"Sep 26, 2026",client157@example.com,Germany,Headphones,4,59.9,239.6
+ORD-0007,2026-03-21,,Germany,Monitor,3,249.0,747.0
+ORD-0153,"Aug 06, 2026",client153@example.com,Germany,Keyboard,5,45.0,225.0
+ORD-0227,"Jan 26, 2026",client227@example.com,France,Monitor,3,249.0,747.0
+ORD-0216,31/05/2026,client216@example.com,France,Laptop,3,899.0,2697.0
+ORD-0099,2026-05-27,not-an-email,Germany,Keyboard,1,45.0,45.0
+ORD-0249,2026-08-21,client249@example.com,France,Mouse,2,-19.5,39.0
+ORD-0106,16/07/2026,client106@example.com,Tunisia,Monitor,5,249.0,1245.0
+ORD-0184,"Apr 03, 2026",client184@example.com,Germany,Keyboard,4,45.0,180.0
+ORD-0245,"Sep 08, 2026",client245@example.com,France,Headphones,4,59.9,239.6
+ORD-0250,26/01/2026,client250@example.com,France,Headphones,5,59.9,299.5
+ORD-0119,"Jan 11, 2026",client119@example.com,Italy,Monitor,4,249.0,996.0
+ORD-0207,2026-09-11,client207@example.com,Tunisia,Monitor,4,249.0,996.0
+ORD-0113,03/05/2026,client113@example.com,Spain,Mouse,5,19.5,97.5
+ORD-0017,2026-01-29,client17@example.com,Germany,Keyboard,2,-45.0,90.0
+ORD-0020,15/03/2026,client20@example.com,Spain,  Monitor ,4,249.0,996.0
+ORD-0231,16/02/2026,,Tunisia,Keyboard,3,45.0,135.0
+ORD-0008,2026-07-14,not-an-email,France,Mouse,1,19.5,19.5
+ORD-0161,2026-09-09,client161@example.com,Tunisia,Keyboard,3,45.0,135.0
+ORD-0135,14/01/2026,client135@example.com,Italy,Mouse,1,-19.5,19.5
+ORD-0047,"Jul 26, 2026",client47@example.com,France,Laptop,1,899.0,899.0
+ORD-0123,26/03/2026,client123@example.com,Spain,  Monitor ,3,249.0,747.0
+ORD-0039,2026-04-26,client39@example.com,Tunisia,Monitor,1,249.0,249.0
+ORD-0092,2026-08-12,not-an-email,France,Headphones,3,59.9,179.7
+ORD-0299,15/02/2026,client299@example.com,Germany,Keyboard,4,45.0,180.0
+ORD-0218,2026-03-29,client218@example.com,Tunisia,Monitor,5,-249.0,1245.0
+ORD-0124,14/01/2026,client124@example.com,Italy,Headphones,5,59.9,299.5
+ORD-0037,"Apr 13, 2026",client37@example.com,Tunisia,Keyboard,4,45.0,180.0
+ORD-0200,05/02/2026,client200@example.com,Tunisia,Keyboard,5,45.0,225.0
+ORD-0003,2026-02-17,client3@example.com,France,Monitor,1,249.0,249.0
+ORD-0048,2026-04-09,client48@example.com,Tunisia,Mouse,1,19.5,19.5
+ORD-0224,12/04/2026,client224@example.com,Germany,Mouse,4,19.5,78.0
+ORD-0029,2026-09-14,client29@example.com,Germany,Monitor,1,249.0,249.0
+ORD-0201,2026-05-17,client201@example.com,Italy,Monitor,3,249.0,747.0
+ORD-0022,24/07/2026,client22@example.com,Italy,Keyboard,4,45.0,180.0
+ORD-0174,"Feb 06, 2026",client174@example.com,Spain,Mouse,3,19.5,58.5
+ORD-0021,"May 15, 2026",client21@example.com,Italy,Headphones,2,59.9,119.8
+ORD-0032,15/06/2026,client32@example.com,Italy,Keyboard,1,-45.0,45.0
+ORD-0087,"Jul 24, 2026",client87@example.com,Italy,Mouse,3,19.5,58.5
+ORD-0064,2026-06-11,client64@example.com,Spain,Headphones,3,59.9,179.7
+ORD-0272,"Jan 31, 2026",client272@example.com,Italy,Mouse,2,19.5,39.0
+ORD-0082,"Jul 30, 2026",client82@example.com,Germany,Laptop,2,899.0,1798.0
+ORD-0230,2026-08-14,client230@example.com,Germany,Laptop,1,899.0,899.0
+ORD-0010,2026-07-13,client10@example.com,France,Monitor,5,249.0,1245.0
+ORD-0171,"Mar 30, 2026",client171@example.com,Tunisia,Laptop,2,899.0,1798.0
+ORD-0052,06/09/2026,client52@example.com,Spain,Headphones,2,59.9,119.8
+ORD-0266,"Feb 28, 2026",client266@example.com,France,Keyboard,4,45.0,180.0
+ORD-0103,"May 01, 2026",client103@example.com,France,Keyboard,3,45.0,135.0
+ORD-0271,2026-08-10,client271@example.com,France,Laptop,1,899.0,899.0
+ORD-0019,"Apr 19, 2026",,Germany,Headphones,5,59.9,299.5
+ORD-0144,05/05/2026,client144@example.com,Spain,Laptop,3,899.0,2697.0
+ORD-0062,11/06/2026,,Italy,Keyboard,5,45.0,225.0
+ORD-0270,2026-08-31,client270@example.com,Tunisia,Mouse,3,19.5,58.5
+ORD-0109,04/03/2026,client109@example.com,Tunisia,Laptop,5,899.0,4495.0
+ORD-0156,2026-04-05,client156@example.com,France,Headphones,3,59.9,179.7
+ORD-0116,"Mar 20, 2026",client116@example.com,Spain,Headphones,2,59.9,119.8
+ORD-0086,2026-05-23,client86@example.com,Germany,Headphones,4,59.9,239.6
+ORD-0049,2026-08-05,client49@example.com,Tunisia,Keyboard,4,45.0,180.0
+ORD-0192,15/04/2026,,France,Monitor,4,249.0,996.0
+ORD-0137,"Jun 04, 2026",client137@example.com,France,  Keyboard ,2,45.0,90.0
+ORD-0134,2026-02-28,client134@example.com,Tunisia,Mouse,3,19.5,58.5
