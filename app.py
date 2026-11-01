@@ -13,7 +13,7 @@ import pandas as pd
 import streamlit as st
 
 from clinic import engine, prompts
-from clinic.config import SAMPLE_FILE, load_agents, load_slack, namespace_for
+from clinic.config import PLANNER, SAMPLE_FILE, load_agents, load_slack, namespace_for
 
 st.set_page_config(page_title="Data Clinic", page_icon="🩺", layout="wide")
 
@@ -55,7 +55,9 @@ DEFAULTS: dict = {
     "remediation": None, "pending_questions": None, "remediation_thread": None,
     "report_text": None, "report_file": None, "memory_files": [], "memory_before": [],
     "log": [], "costs": {}, "threads": {}, "slack_alert": None,
+    "file_columns": None, "migration_plan": None, "plan_included": True,
 }
+SCHEMA_WORDS = ("schema", "column", "colonne", "renamed", "missing column", "header")
 for k, v in DEFAULTS.items():
     st.session_state.setdefault(k, v)
 
@@ -102,6 +104,8 @@ with st.sidebar:
     for spec in AGENTS.values():
         mem = " · mémoire" if spec.uses_memory else ""
         st.markdown(f"- **{spec.label}**  \n  <span class='dc-muted'>{spec.role}{mem}</span>", unsafe_allow_html=True)
+    st.markdown(f"- **{PLANNER.label}** <span class='dc-muted'>(à la demande)</span>  \n  "
+                f"<span class='dc-muted'>{PLANNER.role}</span>", unsafe_allow_html=True)
     st.divider()
     max_steps = st.slider("Budget d'étapes par agent", 3, 15, 8,
                           help="Nombre maximal de tours d'outils (max_steps Cominty). Protège les crédits.")
@@ -180,6 +184,7 @@ if st.session_state.file_bytes:
     if df_in is not None:
         m2.metric("Lignes", f"{len(df_in):,}".replace(",", " "))
         m3.metric("Colonnes", df_in.shape[1])
+        st.session_state.file_columns = [str(c) for c in df_in.columns]
     ns = m4.text_input("Famille de dataset (mémoire)", st.session_state.namespace,
                        help="Namespace mémoire Cominty. Les fichiers d'une même famille partagent leurs règles.")
     st.session_state.namespace = ns.strip() or st.session_state.namespace
@@ -254,6 +259,44 @@ if st.session_state.stage >= 1 and st.session_state.issues is not None:
         elif alert_txt:
             st.warning(f"Alerte Slack non confirmée par l'agent : {alert_txt[:300]}")
 
+    # Changement de schéma : on peut demander un plan de migration à l'agent intégré Planner de Cominty.
+    schema_issues = [i for i in issues if i.get("contract_violation")
+                     and any(w in (str(i.get("description", "")) + " ".join(i.get("columns") or [])).lower()
+                             for w in SCHEMA_WORDS)]
+    contract_before = next((f["content"] for f in st.session_state.memory_before
+                            if f["path"].endswith("data_contract.md")), None)
+    if schema_issues and contract_before:
+        st.markdown("#### 🗺️ Changement de schéma détecté")
+        st.caption("Le fichier ne respecte plus la structure du contrat. L'agent Planner de Cominty peut proposer "
+                   "un plan de migration que vous approuvez avant exécution.")
+        if st.session_state.migration_plan is None:
+            if st.session_state.stage == 1 and st.button("Demander un plan de migration au Planner"):
+                cb = feed_callback(feed_box)
+                with st.status("Planner : rédaction du plan de migration…", expanded=False) as s:
+                    plan_run = engine.run_sync(engine.run_agent(
+                        PLANNER,
+                        prompts.planner_message(st.session_state.namespace, st.session_state.file_name,
+                                                contract_before, st.session_state.file_columns or [], schema_issues),
+                        lock_capabilities=False, max_steps=3, on_event=cb))
+                    cost = plan_run.cost
+                    canvas = engine.plan_canvas(plan_run)
+                    if canvas is None and plan_run.questions:
+                        # Le Planner cadre parfois par des questions : on répond avec le contexte fixe du projet.
+                        plan_run = engine.run_sync(engine.answer_agent(
+                            PLANNER, plan_run.thread_id, prompts.planner_answer(), max_steps=3, on_event=cb))
+                        cost += plan_run.cost
+                        canvas = engine.plan_canvas(plan_run)
+                    st.session_state.costs["Planner"] = cost
+                    st.session_state.migration_plan = canvas or plan_run.text
+                    s.update(label=f"Planner terminé ({cost:.4f} €)", state="complete")
+                st.rerun()
+        else:
+            with st.expander("Plan de migration proposé par le Planner", expanded=True):
+                st.markdown(st.session_state.migration_plan)
+            st.session_state.plan_included = st.toggle(
+                "Approuver ce plan : le Remediator appliquera ses étapes de données avant les corrections",
+                value=st.session_state.plan_included)
+
     if issues:
         st.markdown("**Corrections proposées.** Cochez celles que vous approuvez. "
                     "Les corrections jugées sûres par l'Auditor sont pré-cochées.")
@@ -282,7 +325,8 @@ if st.session_state.stage >= 1 and st.session_state.issues is not None:
                 st.session_state.approved = approved
                 cb = feed_callback(feed_box)
                 with st.status("Remediator : application des corrections…", expanded=False) as s:
-                    msg = prompts.remediator_message(approved, st.session_state.file_name)
+                    plan = st.session_state.migration_plan if st.session_state.plan_included else None
+                    msg = prompts.remediator_message(approved, st.session_state.file_name, migration_plan=plan)
                     rem = engine.run_sync(engine.run_agent(
                         AGENTS["remediator"], msg, file_bytes=st.session_state.file_bytes,
                         filename=st.session_state.file_name, max_steps=max_steps, on_event=cb))
@@ -367,7 +411,8 @@ if st.session_state.stage >= 2 and st.session_state.remediation is not None:
                 msg = prompts.reporter_message(
                     st.session_state.namespace, st.session_state.file_name, st.session_state.profile,
                     st.session_state.issues, [i.get("id") for i in st.session_state.approved or []],
-                    rem.text, change_log, slack_channel=SLACK.channel if slack_on else None)
+                    rem.text, change_log, slack_channel=SLACK.channel if slack_on else None,
+                    migration_plan=st.session_state.migration_plan if st.session_state.plan_included else None)
                 rep = engine.run_sync(engine.run_agent(
                     AGENTS["reporter"], msg, extra_files=rem.files, namespace=st.session_state.namespace,
                     connections=[SLACK.connection] if slack_on else None,
@@ -412,6 +457,17 @@ if st.session_state.stage >= 3:
     if files:
         st.success(f"{len(files)} fichier(s) mémoire dans la famille `{st.session_state.namespace}`. "
                    "Au prochain dépôt d'un fichier de cette famille, l'Auditor vérifiera ces règles automatiquement.")
+        before_c = next((f["content"] for f in st.session_state.memory_before if f["path"].endswith("data_contract.md")), None)
+        after_c = next((f["content"] for f in files if f["path"].endswith("data_contract.md")), None)
+        v_before, v_after = engine.contract_version(before_c), engine.contract_version(after_c)
+        if after_c is not None:
+            if before_c is None:
+                st.info(f"📜 Contrat de données créé (version {v_after or 1}).")
+            else:
+                st.info(f"📜 Contrat de données mis à jour : version {v_before or 1} → {v_after or '?'}.")
+                diff = engine.contract_diff(before_c, after_c)
+                with st.expander("Ce qui a changé dans le contrat", expanded=bool(diff)):
+                    st.code(diff or "Aucune différence de contenu.", language="diff")
         for f in files:
             with st.expander(f"{f['path']}  —  {f['purpose']}"):
                 st.markdown(f["content"])
