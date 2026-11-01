@@ -26,6 +26,15 @@ The second time a file of the same family arrives, the Auditor reads the contrac
 and the Reporter **alerts the team in Slack** through Cominty's MCP integration. The agents come to you;
 you do not have to open a dashboard to find out something is wrong.
 
+Two more behaviours build on that contract:
+
+* **Schema changes get a plan, not a guess.** When a violation concerns the structure of the file (a renamed
+  or missing column), you can ask Cominty's built-in **Planner** agent for a migration plan: column mapping,
+  validations, contract update or rejection, rollback. You approve it, and the Remediator applies its data
+  steps before the other fixes.
+* **The contract is versioned.** Each Reporter run bumps `Version: N`, keeps a dated `## History` section,
+  and the app shows a diff of what changed since the previous version.
+
 ## Architecture
 
 ```
@@ -79,7 +88,9 @@ SLACK_CONNECTION = "slack"
 
 ## Cost
 
-A full case (4 agents) costs about **0.015 €** of Cominty credits on the sample file.
+A full case (4 agents) costs about **0.015 €** of Cominty credits on the sample file. A Slack alert adds
+about 0.003 €. The optional Planner step is the most expensive one (0.02 to 0.07 € depending on the
+contract length), which is why it runs only on request.
 
 ## Limits (proof of concept)
 
