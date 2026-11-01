@@ -36,6 +36,7 @@ class AgentResult:
     questions: list[dict[str, Any]] = field(default_factory=list)  # {prompt, options}
     cost: float = 0.0
     steps: int = 0
+    structured_output: Any = None   # ex. Planner : {"canvas": "<plan markdown>"}
 
 
 # --------------------------------------------------------------------------- utilitaires
@@ -117,7 +118,8 @@ async def _consume(client: AsyncCominty, run, spec: AgentSpec, on_event: EventCa
     questions = [{"prompt": q.prompt, "options": list(q.options or [])} for q in (reply.questions or [])]
     thread = getattr(run, "thread", None)
     resolved_thread = thread_id or (str(thread.id) if thread is not None else str(getattr(reply, "thread_id", "")))
-    return AgentResult(spec.label, resolved_thread, text, files, questions, cost, steps)
+    return AgentResult(spec.label, resolved_thread, text, files, questions, cost, steps,
+                       structured_output=getattr(reply, "structured_output", None))
 
 
 # --------------------------------------------------------------------------- appels agents
@@ -131,6 +133,7 @@ async def run_agent(
     extra_files: list[dict[str, Any]] | None = None,   # [{name, bytes}] : 5 fichiers max par message
     namespace: str | None = None,
     connections: list[str] | None = None,              # intégrations MCP autorisées sur ce thread
+    lock_capabilities: bool = True,                    # False pour les agents intégrés qui les ignorent (Planner)
     max_steps: int = 8,
     on_event: EventCallback | None = None,
 ) -> AgentResult:
@@ -150,7 +153,7 @@ async def run_agent(
             message=message,
             file_ids=file_ids,
             max_steps=max_steps,
-            thread_capabilities=_capabilities(spec, namespace, connections),
+            thread_capabilities=_capabilities(spec, namespace, connections) if lock_capabilities else None,
         )
         return await _consume(client, run, spec, on_event)
 
@@ -242,6 +245,28 @@ async def forget_namespace(namespace: str) -> int:
         for s in summaries or []:
             await client.memory.delete(s.path, namespace=namespace)
         return len(summaries or [])
+
+
+def plan_canvas(result: AgentResult) -> str | None:
+    """Le plan du Planner intégré est dans structured_output['canvas'], pas dans le texte de réponse."""
+    so = result.structured_output
+    canvas = so.get("canvas") if isinstance(so, dict) else None
+    return canvas.strip() if isinstance(canvas, str) and canvas.strip() else None
+
+
+def contract_version(content: str | None) -> int | None:
+    """Numéro de version déclaré dans un data_contract.md (ligne 'Version: N'), None si absent."""
+    m = re.search(r"^\s*\**Version\**\s*:\s*\**\s*(\d+)", content or "", re.IGNORECASE | re.MULTILINE)
+    return int(m.group(1)) if m else None
+
+
+def contract_diff(before: str | None, after: str | None) -> str:
+    """Diff unifié lisible entre deux versions du contrat (vide si identiques)."""
+    import difflib
+
+    lines = difflib.unified_diff((before or "").splitlines(), (after or "").splitlines(),
+                                 fromfile="contrat précédent", tofile="contrat actuel", lineterm="", n=1)
+    return "\n".join(lines)
 
 
 def save_outputs(files: list[dict[str, Any]]) -> list[Path]:

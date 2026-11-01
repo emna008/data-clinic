@@ -29,6 +29,9 @@ _load_streamlit_secrets()
 SAMPLE_FILE = ROOT / "data" / "sales_dirty.csv"
 OUTPUT_DIR = ROOT / "data" / "output"
 
+# Agent intégré Cominty : produit un plan sans rien exécuter (utilisé pour les changements de schéma).
+PLANNER_AGENT_ID = "__cominty_agents::agent.planner"
+
 
 @dataclass(frozen=True)
 class AgentSpec:
@@ -53,6 +56,9 @@ def load_agents() -> dict[str, AgentSpec]:
         "remediator": AgentSpec("remediator", "Remediator", "Applique les corrections approuvées", _env("REMEDIATOR_AGENT_ID"), False),
         "reporter": AgentSpec("reporter", "Reporter", "Rédige le rapport et mémorise les règles", _env("REPORTER_AGENT_ID"), True),
     }
+
+
+PLANNER = AgentSpec("planner", "Planner", "Propose un plan de migration (agent intégré Cominty)", PLANNER_AGENT_ID, False)
 
 
 @dataclass(frozen=True)
