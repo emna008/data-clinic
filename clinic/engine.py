@@ -83,8 +83,12 @@ def _capabilities(spec: AgentSpec, namespace: str | None, connections: list[str]
     return AgentCapabilities(**kwargs)
 
 
-async def _consume(client: AsyncCominty, run, spec: AgentSpec, on_event: EventCallback | None) -> AgentResult:
-    """Lit le flux d'événements d'un run, relaie chaque étape à l'interface, puis collecte le résultat."""
+async def _consume(client: AsyncCominty, run, spec: AgentSpec, on_event: EventCallback | None,
+                   thread_id: str | None = None) -> AgentResult:
+    """Lit le flux d'événements d'un run, relaie chaque étape à l'interface, puis collecte le résultat.
+
+    `thread_id` est fourni pour une relance (chat.send) : sur ce type de run, `run.thread` peut être None.
+    """
     cost, steps = 0.0, 0
     async for ev in run:
         payload: dict[str, Any] | None = None
@@ -111,7 +115,9 @@ async def _consume(client: AsyncCominty, run, spec: AgentSpec, on_event: EventCa
         name = Path(f.name).name  # on ne fait pas confiance au chemin renvoyé
         files.append({"name": name, "bytes": await client.chat.download_file(f.id)})
     questions = [{"prompt": q.prompt, "options": list(q.options or [])} for q in (reply.questions or [])]
-    return AgentResult(spec.label, str(run.thread.id), text, files, questions, cost, steps)
+    thread = getattr(run, "thread", None)
+    resolved_thread = thread_id or (str(thread.id) if thread is not None else str(getattr(reply, "thread_id", "")))
+    return AgentResult(spec.label, resolved_thread, text, files, questions, cost, steps)
 
 
 # --------------------------------------------------------------------------- appels agents
@@ -160,7 +166,7 @@ async def answer_agent(
     """Répond à une question posée par l'agent, dans le même thread (il garde tout son contexte)."""
     async with AsyncCominty() as client:
         run = await client.chat.send(thread_id, agent_id=spec.agent_id, message=message, max_steps=max_steps)
-        return await _consume(client, run, spec, on_event)
+        return await _consume(client, run, spec, on_event, thread_id=str(thread_id))
 
 
 def extract_json(result: AgentResult) -> Any:
